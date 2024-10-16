@@ -28,11 +28,11 @@ public class Main {
         int population = 12_000_000;
         byte birthRate = 17;
         byte mortalityRate = 8;
-        int birthPopulation = (int) (population / 1000f * birthRate);
-        int mortalityPopulation = (int) (population / 1000f * mortalityRate);
-        System.out.println("Рождаемость для населения численностью " + population + " равна: " + birthPopulation + " человека в год");
-        System.out.println("Смертность для населения численностью " + population + " равна: " + mortalityPopulation + " человека в год\n");
+        int birthPopulation = 0;
+        int mortalityPopulation = 0;
         for (short year = 2024; year <= 2034; year++) {
+            birthPopulation = (int) (population / 1000f * birthRate);
+            mortalityPopulation = (int) (population / 1000f * mortalityRate);
             population = population + birthPopulation - mortalityPopulation;
             System.out.println("Год " + year + ", численность населения составляет " + population + " человек;");
         }
