@@ -28,11 +28,9 @@ public class Main {
         int population = 12_000_000;
         byte birthRate = 17;
         byte mortalityRate = 8;
-        int birthPopulation = 0;
-        int mortalityPopulation = 0;
         for (short year = 2024; year <= 2034; year++) {
-            birthPopulation = (int) (population / 1000f * birthRate);
-            mortalityPopulation = (int) (population / 1000f * mortalityRate);
+            int birthPopulation = (int) (population / 1000f * birthRate);
+            int mortalityPopulation = (int) (population / 1000f * mortalityRate);
             population = population + birthPopulation - mortalityPopulation;
             System.out.println("Год " + year + ", численность населения составляет " + population + " человек;");
         }
@@ -94,7 +92,7 @@ public class Main {
             System.out.println("Ошибка введите число первой пятницы в месяце");
         } else {
             for (number = 1; number <= 31; number++) {
-                if ((numberFriday - number) % 7 == 0 || (number == numberFriday)) {
+                if ((numberFriday - number) % 7 == 0) {
                     System.out.println("Сегодня пятница, " + number + "-е число. Необходимо подготовить отчет");
                 }
             }
